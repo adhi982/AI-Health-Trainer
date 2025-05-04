@@ -29,7 +29,7 @@ The application uses your device's camera to analyze movement patterns during ex
 
 1. Clone this repository
    ```
-   git clone https://github.com/adi982/AI-Health-Trainer.git
+   git clone https://github.com/adhi982/AI-Health-Trainer.git
    cd AI-Health-Trainer
    ```
 
