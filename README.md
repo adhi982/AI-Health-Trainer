@@ -57,6 +57,8 @@ Upload a full-body photo to get measurements like shoulder width, waist, and leg
 ### Workout Planner
 Input your fitness level, body type, and goals to receive a customized workout schedule with detailed instructions for each exercise.
 
+**Note: The Exercise Recommendations feature is currently under development. The current interface shows sample data to demonstrate the planned functionality.**
+
 ### Progress Dashboard
 Log your measurements and completed workouts to visualize your progress with interactive charts and statistics.
 

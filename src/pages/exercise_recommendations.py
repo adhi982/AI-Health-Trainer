@@ -46,6 +46,9 @@ def main():
             subtitle="Get personalized workout recommendations based on your goals and body type"
         )
         
+        # Display upcoming feature notification
+        st.warning("🚧 **UPCOMING FEATURE** 🚧 - The AI model for personalized exercise recommendations is currently in development. This page shows a preview of the interface with sample data.")
+        
         # Sidebar navigation
         st.sidebar.title("Navigation")
         
@@ -346,8 +349,7 @@ def main():
                     exercise_df = pd.DataFrame({
                         "Exercise": exercises,
                         "Sets/Reps": [exercise_details.get(ex, {}).get("description", "").split("**Sets/Reps**: ")[1].split("\n")[0] 
-                                     if "**Sets/Reps**: " in exercise_details.get(ex, {}).get("description", "") else "3 sets of
- 10-12 reps" for ex in exercises],
+                                     if "**Sets/Reps**: " in exercise_details.get(ex, {}).get("description", "") else "3 sets of 10-12 reps" for ex in exercises],
                         "Rest": [exercise_details.get(ex, {}).get("description", "").split("**Rest**: ")[1].split("\n")[0] 
                                 if "**Rest**: " in exercise_details.get(ex, {}).get("description", "") else "60 seconds" for ex in exercises]
                     })
@@ -371,22 +373,16 @@ def main():
                     with cols[col_idx]:
                         if exercise in exercise_details:
                             details = exercise_details[exercise]
-                            # Create card for exercise
-                            st.markdown(f"""
-                            <div class="card">
-                                <h2 class="card-title">{exercise}</h2>
-                                <div class="card-content">
-                                    <p><strong>Difficulty:</strong> {details.get('difficulty', 'Intermediate')}</p>
-                                    <p><strong>Target Muscles:</strong> {', '.join(details.get('muscles', []))}</p>
-                                    {details.get('description', '')}
-                                </div>
-                            </div>
-                            """, unsafe_allow_html=True)
+                            # Use native Streamlit components instead of HTML
+                            st.subheader(exercise)
+                            st.markdown(f"**Difficulty:** {details.get('difficulty', 'Intermediate')}")
+                            st.markdown(f"**Target Muscles:** {', '.join(details.get('muscles', []))}")
+                            st.markdown(details.get('description', ''))
+                            st.markdown("---") # Add a separator between exercises
                 
                 # Save button
                 if st.button("Save Workout Plan"):
                     show_success_box("Workout plan saved successfully!")
-            
     except Exception as e:
         logger.error(f"Error in exercise recommendations page: {e}")
         st.error("An error occurred in the exercise recommendations page. Please check the logs for details.")
