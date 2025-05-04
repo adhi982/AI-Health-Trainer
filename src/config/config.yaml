@@ -1,0 +1,46 @@
+app:
+  title: "AI Health Trainer"
+  description: "Your personal AI fitness coach for exercise form analysis, body measurements, and workout recommendations"
+  icon: "💪"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+
+mediapipe:
+  pose:
+    static_image_mode: false
+    model_complexity: 1
+    min_detection_confidence: 0.5
+    min_tracking_confidence: 0.5
+
+models:
+  exercise_model: "models_data/exercise_model.pkl"
+  body_type_model: "models_data/body_type_model.pkl"
+  features: "models_data/feature_names.pkl"
+
+exercise_data:
+  body_data: "data/body_data.csv"
+  exercise_data: "data/exercise_data.csv"
+
+ui:
+  theme:
+    primary: "#4CAF50"
+    secondary: "#2c3e50"
+    background: "#f5f5f5"
+    text: "#34495e"
+    font: "sans-serif"
+
+home:
+  welcome_text: "Welcome to AI Health Trainer, your personal fitness assistant powered by artificial intelligence"
+  features:
+    - title: "Exercise Form Analysis"
+      description: "Get real-time feedback on your exercise form"
+      icon: "🏋️"
+    - title: "Body Analysis"
+      description: "Analyze your body measurements for personalized advice"
+      icon: "📏"
+    - title: "Custom Workout Plans"
+      description: "Get AI-generated workout plans based on your goals"
+      icon: "📋"
+    - title: "Progress Tracking"
+      description: "Track your fitness journey over time"
+      icon: "📈" 
