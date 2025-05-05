@@ -66,6 +66,9 @@ def main():
         if st.sidebar.button("📈 Progress Tracking"):
             st.switch_page("pages/progress_tracking.py")
         
+        if st.sidebar.button("🧮 Health Measurements"):
+            st.switch_page("pages/measurements.py")
+        
         # Initialize pose estimator
         pose_estimator = PoseEstimator(
             static_image_mode=True,  # Use static image mode for analysis

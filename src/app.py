@@ -55,6 +55,9 @@ def main():
         if st.sidebar.button("📈 Progress Tracking"):
             st.switch_page("pages/progress_tracking.py")
         
+        if st.sidebar.button("🧮 Health Measurements"):
+            st.switch_page("pages/measurements.py")
+        
         # Main content - use columns for a better layout
         col1, col2 = st.columns([2, 1])
         

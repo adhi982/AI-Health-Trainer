@@ -64,6 +64,9 @@ def main():
         if st.sidebar.button("📈 Progress Tracking"):
             st.switch_page("pages/progress_tracking.py")
         
+        if st.sidebar.button("🧮 Health Measurements"):
+            st.switch_page("pages/measurements.py")
+        
         # Initialize model manager
         model_manager = ModelManager()
         

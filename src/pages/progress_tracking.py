@@ -64,6 +64,9 @@ def main():
         if st.sidebar.button("📋 Exercise Recommendations"):
             st.switch_page("pages/exercise_recommendations.py")
         
+        if st.sidebar.button("🧮 Health Measurements"):
+            st.switch_page("pages/measurements.py")
+        
         # Initialize progress tracker
         progress_tracker = ProgressTracker(data_dir="data")
         
